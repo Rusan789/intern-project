@@ -1,0 +1,112 @@
+@extends('layouts.main')
+@section('content')
+
+    <!-- edit bus Page -->
+    <div class="route pt-5 pb-5">
+        <div class="fs-2 text-center mt-5">Update Bus</div>
+        <hr style="width: 20%; margin: auto; color: #000; height: 3px" class="mb-5" />
+
+        <div class="container route-container">
+            <form action="" method="post" class="pb-4">
+                <div class="route-hb d-flex justify-content-between pt-4">
+                    <div class="heading fs-3">
+                        Update Bus
+                    </div>
+                    <button type="button" class="btn btn-success"><a href="{{ route("allBus") }}" class="admin-a-btn">All Bus &rarr;</a></button>
+                </div>  
+                <hr style="color: #000; height: 3px" class="mb-5" />
+                
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Bus Name</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Bus Name"
+                    required
+                    />
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Facilities</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Facilities"
+                    required
+                    />
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Location</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>----- Select Locations -----</option>
+                        <option value="1">Kathmandu-Chitwan</option>
+                        <option value="2">Hetauda-Pokhara</option>
+                        <option value="3">Kathmandu-Pokhara</option>
+                      </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Time</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Time"
+                    required
+                    />
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Price</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Price"
+                    required
+                    />
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Bus Image</label>
+                    <input
+                    type="file"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    required
+                    />
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Driver's Name</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Driver Name"
+                    required
+                    />
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Bus Number</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Bus Number"
+                    required
+                    />
+                </div>
+                <div class="btnAdmin">
+                    <button type="submit" class="btn btn-success">Update Bus &rarr;</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+@endsection
