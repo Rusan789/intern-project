@@ -105,8 +105,7 @@
           <div class="password-field d-flex align-items-center">
             <div class="mb-3 password">
               <label for="password" class="form-label" value="{{ __('Password') }}"
-                >Password</label
-              >
+                >Password</label>
               <input
                 type="password"
                 class="form-control"
