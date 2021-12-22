@@ -14,7 +14,7 @@ class CreateBusesTable extends Migration
     public function up()
     {
         Schema::create('buses', function (Blueprint $table) {
-            $table->id();
+            $table->id('bus_id');
             $table->string('bus_name');
             $table->string('facilities');
             $table->string('time');
@@ -22,10 +22,11 @@ class CreateBusesTable extends Migration
             $table->string('img');
             $table->string('driver_name');
             $table->string('bus_number');
+            $table->unsignedBigInteger('route_id');
             $table->unsignedBigInteger('operator_id');
             $table->timestamps();
-            $table->unsignedBigInteger('route_id')->unsigned()->nullable();
-            $table->foreign('route_id')->references('id')->on('routes')->onDelete('cascade');
+            $table->foreign('route_id')->references('route_id')->on('routes')->onDelete('cascade');
+            $table->foreign('operator_id')->references('operator_id')->on('operators')->onDelete('cascade');
         });
     }
 
