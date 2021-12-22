@@ -15,6 +15,7 @@ class CreateOperatorsTable extends Migration
     {
         Schema::create('operators', function (Blueprint $table) {
             $table->id();
+            $table->string('operator_name');
             $table->timestamps();
         });
     }
