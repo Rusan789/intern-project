@@ -22,8 +22,8 @@ class CreateBusesTable extends Migration
             $table->string('img');
             $table->string('driver_name');
             $table->string('bus_number');
-            $table->int('route_id');
-            $table->int('operator_id');
+            $table->integer('route_id')->unsigned();
+            $table->integer('operator_id')->unsigned();
             $table->foreign('route_id')
                 ->references('id')
                 ->on('routes')
