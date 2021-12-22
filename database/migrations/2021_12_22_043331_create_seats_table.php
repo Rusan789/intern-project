@@ -15,6 +15,12 @@ class CreateSeatsTable extends Migration
     {
         Schema::create('seats', function (Blueprint $table) {
             $table->id();
+            $table->string('seat_number');
+            $table->int('bus_id');
+            $table->foreign('bus_id')
+                ->references('id')
+                ->on('buses')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
