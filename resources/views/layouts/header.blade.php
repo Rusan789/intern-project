@@ -57,15 +57,15 @@
                                         {{ Auth::user()->name }}
                                     </a>
                                     <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="{{ route('admin.addBus') }}">Manage Bus</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('admin.getBus') }}">Manage Bus</a></li>
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('admin.addOperator') }}">Manage Operator</a>
+                                            <a class="dropdown-item" href="{{ route('admin.getOperator') }}">Manage Operator</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('admin.addRoute') }}">Manage Route</a>
+                                            <a class="dropdown-item" href="{{ route('admin.getRoute') }}">Manage Route</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('admin.addSeat') }}">Manage Seat</a>
+                                            <a class="dropdown-item" href="{{ route('admin.getSeat') }}">Manage Seat</a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-a').submit();">Logout</a>

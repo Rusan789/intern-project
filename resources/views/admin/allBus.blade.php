@@ -42,7 +42,7 @@
                         <td>Ram Bahadur</td>
                         <td>Ba 29 Cha 2160</td>
                         <td>
-                            <button type="button" class="btn btn-primary mb-2"><a href="{{ route("editBus") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                            <button type="button" class="btn btn-primary mb-2"><a href="{{ route("admin.editBus") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
                             <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                         </td>
                     </tr>
@@ -58,7 +58,7 @@
                         <td>Ram Bahadur</td>
                         <td>Ba 29 Cha 2160</td>
                         <td>
-                            <button type="button" class="btn btn-primary mb-2"><a href="{{ route("editBus") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                            <button type="button" class="btn btn-primary mb-2"><a href="{{ route("admin.editBus") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
                             <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                         </td>
                     </tr>
@@ -74,7 +74,7 @@
                         <td>Ram Bahadur</td>
                         <td>Ba 29 Cha 2160</td>
                         <td>
-                            <button type="button" class="btn btn-primary mb-2"><a href="{{ route("editBus") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                            <button type="button" class="btn btn-primary mb-2"><a href="{{ route("admin.editBus") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
                             <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                         </td>
                     </tr>
@@ -90,7 +90,7 @@
                         <td>Ram Bahadur</td>
                         <td>Ba 29 Cha 2160</td>
                         <td>
-                            <button type="button" class="btn btn-primary mb-2"><a href="{{ route("editBus") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                            <button type="button" class="btn btn-primary mb-2"><a href="{{ route("admin.editBus") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
                             <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                         </td>
                     </tr>

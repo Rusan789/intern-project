@@ -23,32 +23,32 @@ class OperatorController extends Controller
 
     //function for getting operator details from database
     public function getOperator() {
-        $operators = Operator::orderBy('id', 'Asc')->get();
+        $operators = Operator::orderBy('operator_id', 'Asc')->get();
         return view('admin.allOperator',compact('operators'));
     }
 
     //function for getting operator by id
-    public function getOperatorById($id) {
-        $operator = Operator::where('id', $id)->first();
+    public function getOperatorById($operator_id) {
+        $operator = Operator::where('operator_id', $operator_id)->first();
     }
 
     //function for getting operator by id for updating value
-    public function editOperator($id) {
-        $operator = Operator::find($id);
+    public function editOperator($operator_id) {
+        $operator = Operator::find($operator_id);
         return view('admin.editOperator', compact('operator'));
     }
 
     //function for updating operator
     public function updateOperator(Request $request) {
-        $operator = Operator::find($request->id);
+        $operator = Operator::find($request->operator_id);
         $operator->operator_name = $request->operator_name;
         $operator->save();
         return back()->with('message', 'Operator updated successfully.');
     }
 
     //function for deleting operator
-    public function deleteOperator($id) {
-        Operator::where('id', $id)->delete();
+    public function deleteOperator($operator_id) {
+        Operator::where('id', $operator_id)->delete();
         return back()->with('message', 'Operator deleted successfully.');
     }
 }

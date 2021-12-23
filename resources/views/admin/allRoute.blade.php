@@ -32,7 +32,7 @@
                         <td>Pokhara</td>
                         <td>2021-12-01</td>
                         <td>
-                            <button type="button" class="btn btn-primary"><a href="{{ route("editRoute") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                            <button type="button" class="btn btn-primary"><a href="{{ route("admin.editRoute") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
                             <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                         </td>
                     </tr>
@@ -42,7 +42,7 @@
                         <td>Pokhara</td>
                         <td>2021-12-01</td>
                         <td>
-                            <button type="button" class="btn btn-primary"><a href="{{ route("editRoute") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                            <button type="button" class="btn btn-primary"><a href="{{ route("admin.editRoute") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
                             <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                         </td>
                     </tr>
@@ -52,7 +52,7 @@
                         <td>Pokhara</td>
                         <td>2021-12-01</td>
                         <td>
-                            <button type="button" class="btn btn-primary"><a href="{{ route("editRoute") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                            <button type="button" class="btn btn-primary"><a href="{{ route("admin.editRoute") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
                             <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                         </td>
                     </tr>
@@ -62,7 +62,7 @@
                         <td>Pokhara</td>
                         <td>2021-12-01</td>
                         <td>
-                            <button type="button" class="btn btn-primary"><a href="{{ route("editRoute") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                            <button type="button" class="btn btn-primary"><a href="{{ route("admin.editRoute") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
                             <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                         </td>
                     </tr>

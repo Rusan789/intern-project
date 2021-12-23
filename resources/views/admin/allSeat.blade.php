@@ -28,7 +28,7 @@
                         <td>1</td>
                         <td>A1</td>
                         <td>
-                            <button type="button" class="btn btn-primary"><a href="{{ route("editSeat") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                            <button type="button" class="btn btn-primary"><a href="{{ route("admin.editSeat") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
                             <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                         </td>
                     </tr>
@@ -36,7 +36,7 @@
                         <td>1</td>
                         <td>A1</td>
                         <td>
-                            <button type="button" class="btn btn-primary"><a href="{{ route("editSeat") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                            <button type="button" class="btn btn-primary"><a href="{{ route("admin.editSeat") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
                             <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                         </td>
                     </tr>
@@ -44,7 +44,7 @@
                         <td>1</td>
                         <td>A1</td>
                         <td>
-                            <button type="button" class="btn btn-primary"><a href="{{ route("editSeat") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                            <button type="button" class="btn btn-primary"><a href="{{ route("admin.editSeat") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
                             <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                         </td>
                     </tr>
@@ -52,7 +52,7 @@
                         <td>1</td>
                         <td>A1</td>
                         <td>
-                            <button type="button" class="btn btn-primary"><a href="{{ route("editSeat") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                            <button type="button" class="btn btn-primary"><a href="{{ route("admin.editSeat") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
                             <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                         </td>
                     </tr>

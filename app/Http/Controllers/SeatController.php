@@ -19,7 +19,7 @@ class SeatController extends Controller
 
     //function for getting seat details from database
     public function getSeat() {
-        $seats = seat::orderBy('id', 'Asc')->get();
+        $seats = seat::orderBy('seat_id', 'Asc')->get();
         return view('admin.allSeat', compact('seats'));
     }
 
@@ -29,8 +29,8 @@ class SeatController extends Controller
     }
 
     //function for getting seat by id for updating value
-    public function editSeat($id) {
-        $seat = seat::find($id);
+    public function editSeat($seat_id) {
+        $seat = seat::find($seat_id);
         return view('admin.editSeat', compact('seat'));
     }
 
@@ -40,7 +40,7 @@ class SeatController extends Controller
     }
 
     //function for deleting seat
-    public function deleteSeat($id) {
+    public function deleteSeat($seat_id) {
 
     }
 }
