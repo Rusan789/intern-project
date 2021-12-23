@@ -46,12 +46,9 @@ use Illuminate\Support\Facades\Route;
 
 // User Routes
 Route::get('/', [UserHomeContoller::class, "index"])->name('userHome');
-Route::get('/userDashboard', [userDashboard::class, "index"])->name('userDashboard');
 Route::get('/busDetails', [busDetails::class, "index"])->name('busDetails');
 Route::get('/searchBus', [searchBus::class, "index"])->name('searchBus');
 
-// Admin Routes
-Route::get('admin/adminDashboard', [adminDashboard::class, "index"])->name('adminDashboard');
 //for bus
 Route::get('admin/addBus', [addBus::class, "index"])->name('addBus');
 Route::get('admin/editBus', [editBus::class, "index"])->name('editBus');
