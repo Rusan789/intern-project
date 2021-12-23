@@ -14,6 +14,7 @@ use App\Http\Controllers\admin\editOperator;
 use App\Http\Controllers\admin\editRoute;
 use App\Http\Controllers\admin\editSeat;
 use App\Http\Controllers\busDetails;
+use App\Http\Controllers\RouteController;
 use App\Http\Controllers\searchBus;
 use App\Http\Controllers\userDashboard;
 use App\Http\Controllers\UserHomeContoller;
@@ -63,6 +64,7 @@ Route::get('admin/allOperator', [allOperator::class, "index"])->name('allOperato
 
 //for route
 Route::get('admin/addRoute', [addRoute::class, "index"])->name('addRoute');
+Route::post('admin/uploadRoute', [addRoute::class, "uploadRoute"])->name('uploadRoute');
 Route::get('admin/editRoute', [editRoute::class, "index"])->name('editRoute');
 Route::get('admin/allRoute', [allRoute::class, "index"])->name('allRoute');
 

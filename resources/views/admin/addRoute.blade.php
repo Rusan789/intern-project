@@ -7,7 +7,8 @@
         <hr style="width: 20%; margin: auto; color: #000; height: 3px" class="mb-5" />
 
         <div class="container route-container mb-5">
-            <form action="" method="post" class="pb-4">
+            <form action="{{ url('uploadRoute') }}" method="post" class="pb-4">
+                @csrf
                 <div class="route-hb d-flex justify-content-between pt-4">
                     <div class="heading fs-3">
                         Create Route
@@ -17,31 +18,34 @@
                 <hr style="color: #000; height: 3px" class="mb-5" />
                 
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Travelling From</label>
+                    <label for="from" class="form-label">Travelling From</label>
                     <input
                     type="text"
                     class="form-control"
-                    id="exampleFormControlInput1"
+                    name="from"
+                    id="from"
                     placeholder="Travelling From..."
                     required
                     />
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Travelling To</label>
+                    <label for="to" class="form-label">Travelling To</label>
                     <input
                     type="text"
                     class="form-control"
-                    id="exampleFormControlInput1"
+                    name="to"
+                    id="to"
                     placeholder="Travelling To"
                     required
                     />
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Date</label>
+                    <label for="date" class="form-label">Date</label>
                     <input
                     type="date"
                     class="form-control"
-                    id="exampleFormControlInput1"
+                    name="date"
+                    id="date"
                     required
                     />
                 </div>
