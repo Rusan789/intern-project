@@ -76,7 +76,7 @@
             </div>
             <div class="d-flex justify-content-center">
               <button type="button" class="btn btn-primary bus-btn p-2">
-                <a href="{{ route('searchBus') }}">Search Bus &rarr;</a>
+                <a href="{{ route('user.searchBus') }}">Search Bus &rarr;</a>
               </button>
             </div>
           </div>

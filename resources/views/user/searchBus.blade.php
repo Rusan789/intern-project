@@ -98,7 +98,7 @@
                                         <div class="flex-price col-lg-3">
                                             <h4>Price</h4>
                                             <h5 class="mb-3">Rs. 800</h5>
-                                            <button type="button" class="btn btn-primary mb-3"><a class="btnBus" href="{{ route("busDetails") }}">Select &rarr;</a></button>
+                                            <button type="button" class="btn btn-primary mb-3"><a class="btnBus" href="{{ route("user.busDetails") }}">Select &rarr;</a></button>
                                         </div>
                                     </div>
                                 </div>                                
@@ -131,7 +131,7 @@
                                         <div class="flex-price col-lg-3">
                                             <h4>Price</h4>
                                             <h5 class="mb-3">Rs. 800</h5>
-                                            <button type="button" class="btn btn-primary mb-3"><a class="btnBus" href="{{ route("busDetails") }}">Select &rarr;</a></button>
+                                            <button type="button" class="btn btn-primary mb-3"><a class="btnBus" href="{{ route("user.busDetails") }}">Select &rarr;</a></button>
                                         </div>
                                     </div>
                                 </div>                                
@@ -164,7 +164,7 @@
                                         <div class="flex-price col-lg-3">
                                             <h4>Price</h4>
                                             <h5 class="mb-3">Rs. 800</h5>
-                                            <button type="button" class="btn btn-primary mb-3"><a class="btnBus" href="{{ route("busDetails") }}">Select &rarr;</a></button>
+                                            <button type="button" class="btn btn-primary mb-3"><a class="btnBus" href="{{ route("user.busDetails") }}">Select &rarr;</a></button>
                                         </div>
                                     </div>
                                 </div>                                

@@ -16,7 +16,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 fixed-top">
         <div class="container">
-            <a href="{{ route("userHome") }}" class="navbar-brand font">Bus Ticketing System</a>
+            <a href="{{ route("user.userHome") }}" class="navbar-brand font">Bus Ticketing System</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
           <span class="navbar-toggler-icon"></span>
@@ -57,15 +57,15 @@
                                         {{ Auth::user()->name }}
                                     </a>
                                     <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="{{ route('allBus') }}">Manage Bus</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('admin.addBus') }}">Manage Bus</a></li>
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('allOperator') }}">Manage Operator</a>
+                                            <a class="dropdown-item" href="{{ route('admin.addOperator') }}">Manage Operator</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('allRoute') }}">Manage Route</a>
+                                            <a class="dropdown-item" href="{{ route('admin.addRoute') }}">Manage Route</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('allSeat') }}">Manage Seat</a>
+                                            <a class="dropdown-item" href="{{ route('admin.addSeat') }}">Manage Seat</a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-a').submit();">Logout</a>
