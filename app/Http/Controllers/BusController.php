@@ -19,8 +19,9 @@ class BusController extends Controller
 
     //function for getting bus details from database
     public function getBus() {
-        $buses = bus::orderBy('bus_id', 'Asc')->get();
-        return view('admin.allBus', compact('buses'));
+        // $buses = bus::orderBy('bus_id', 'Asc')->get();
+        return view('admin.allBus');
+        // return view('admin.allBus', compact('buses'));
     }
 
     //function for getting bus by id
@@ -30,8 +31,9 @@ class BusController extends Controller
 
     //function for getting bus by id for updating value
     public function editBus($bus_id) {
-        $bus = bus::find($bus_id);
-        return view('admin.editBus', compact('bus'));
+        // $bus = bus::find($bus_id);
+        return view('admin.editBus');
+        // return view('admin.editBus', compact('bus'));
     }
 
     //function for updating bus

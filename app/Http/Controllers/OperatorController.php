@@ -23,32 +23,34 @@ class OperatorController extends Controller
 
     //function for getting operator details from database
     public function getOperator() {
-        $operators = Operator::orderBy('operator_id', 'Asc')->get();
-        return view('admin.allOperator',compact('operators'));
+        // $operators = Operator::orderBy('operator_id', 'Asc')->get();
+        return view('admin.allOperator');
+        // return view('admin.allOperator',compact('operators'));
     }
 
     //function for getting operator by id
     public function getOperatorById($operator_id) {
-        $operator = Operator::where('operator_id', $operator_id)->first();
+        // $operator = Operator::where('operator_id', $operator_id)->first();
     }
 
     //function for getting operator by id for updating value
     public function editOperator($operator_id) {
-        $operator = Operator::find($operator_id);
-        return view('admin.editOperator', compact('operator'));
+        // $operator = Operator::find($operator_id);
+        return view('admin.editOperator');
+        // return view('admin.editOperator', compact('operator'));
     }
 
     //function for updating operator
     public function updateOperator(Request $request) {
-        $operator = Operator::find($request->operator_id);
-        $operator->operator_name = $request->operator_name;
-        $operator->save();
-        return back()->with('message', 'Operator updated successfully.');
+        // $operator = Operator::find($request->operator_id);
+        // $operator->operator_name = $request->operator_name;
+        // $operator->save();
+        // return back()->with('message', 'Operator updated successfully.');
     }
 
     //function for deleting operator
     public function deleteOperator($operator_id) {
-        Operator::where('id', $operator_id)->delete();
-        return back()->with('message', 'Operator deleted successfully.');
+        // Operator::where('id', $operator_id)->delete();
+        // return back()->with('message', 'Operator deleted successfully.');
     }
 }
