@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\seat;
 use Illuminate\Http\Request;
 
 class SeatController extends Controller
@@ -18,7 +19,8 @@ class SeatController extends Controller
 
     //function for getting seat details from database
     public function getSeat() {
-
+        $seats = seat::orderBy('id', 'Asc')->get();
+        return view('admin.allSeat', compact('seats'));
     }
 
     //function for getting seat by id
@@ -28,7 +30,8 @@ class SeatController extends Controller
 
     //function for getting seat by id for updating value
     public function editSeat($id) {
-
+        $seat = seat::find($id);
+        return view('admin.editSeat', compact('seat'));
     }
 
     //function for updating seat
