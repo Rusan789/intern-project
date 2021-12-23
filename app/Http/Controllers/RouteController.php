@@ -24,31 +24,30 @@ class RouteController extends Controller
 
     //function for getting route details from database
     public function getRoute() {
-        // $routes = Route::orderBy('route_id','Asc')->get();
-        return view('admin.allRoute');
-        // return view('admin.allRoute',compact('routes'));
+        $routes = Route::orderBy('route_id','Asc')->get();
+        // return view('admin.allRoute');
+        return view('admin.allRoute',compact('routes'));
     }
 
     //function for getting route by id
-    public function getRouteById() {
-        // $route = Route::where('route_id', $route_id)->first();
+    public function getRouteById($route_id) {
+        Route::where('route_id', $route_id)->first();
     }
 
     //function for getting route by id for updating value
-    public function editRoute() {
-        // $route = Route::find($route_id);
-        return view('admin.editRoute');
-        // return view('admin.editRoute', compact('route'));
+    public function editRoute($route_id) {
+        $route = Route::find($route_id);
+        return view('admin.editRoute',compact('route'));
     }
 
     //function for updating route
     public function updateRoute(Request $request) {
-        // $route = Route::find($request->route_id);
-        // $route->from = $request->from;
-        // $route->to = $request->to;
-        // $route->date = $request->date;
-        // $route->save();
-        // return back()->with('message','Route updated successfully.');
+        $route = Route::find($request->route_id);
+        $route->from = $request->from;
+        $route->to = $request->to;
+        $route->date = $request->date;
+        $route->save();
+        return back()->with('message','Route updated successfully.');
     }
 
     //function for deleting route

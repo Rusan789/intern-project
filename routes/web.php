@@ -58,16 +58,16 @@ Route::post('/admin/create-operator',[OperatorController::class,'createOperator'
 Route::get('/admin/getOperator',[OperatorController::class,'getOperator'])->name('admin.getOperator');
 Route::get('/admin/operator/',[OperatorController::class,'getOperatorById'])->name('admin.getOperatorById');
 Route::get('/admin/editOperator/',[OperatorController::class,'editOperator'])->name('admin.editOperator');
-Route::get('/admin/updateOperator/',[OperatorController::class,'updateOperator'])->name('admin.updateOperator');
+Route::post('/admin/updateOperator/',[OperatorController::class,'updateOperator'])->name('admin.updateOperator');
 Route::get('/admin/deleteOperator/',[OperatorController::class,'deleteOperator'])->name('admin.deleteOperator');
 
 //for route
 Route::get('/admin/add-route',[RouteController::class,'addRoute'])->name('admin.addRoute');
 Route::post('/admin/create-route',[RouteController::class,'createRoute'])->name('admin.createRoute');
 Route::get('/admin/getRoute',[RouteController::class,'getRoute'])->name('admin.getRoute');
-Route::get('/admin/route',[RouteController::class,'getRouteById'])->name('admin.getRouteById');
-Route::get('/admin/editRoute',[RouteController::class,'editRoute'])->name('admin.editRoute');
-Route::get('/admin/updateRoute',[RouteController::class,'updateRoute'])->name('admin.updateRoute');
+Route::get('/admin/route/{route_id}',[RouteController::class,'getRouteById'])->name('admin.getRouteById');
+Route::get('/admin/editRoute/{route_id}',[RouteController::class,'editRoute'])->name('admin.editRoute');
+Route::post('/admin/updateRoute',[RouteController::class,'updateRoute'])->name('admin.updateRoute');
 Route::get('/admin/deleteRoute',[RouteController::class,'deleteRoute'])->name('admin.deleteRoute');
 
 //for seat
@@ -76,5 +76,5 @@ Route::post('/admin/create-seat',[SeatController::class,'createSeat'])->name('ad
 Route::get('/admin/getSeat',[SeatController::class,'getSeat'])->name('admin.getSeat');
 Route::get('/admin/seat',[SeatController::class,'getSeatById'])->name('admin.getSeatById');
 Route::get('/admin/editSeat',[SeatController::class,'editSeat'])->name('admin.editSeat');
-Route::get('/admin/updateSeat',[SeatController::class,'updateSeat'])->name('admin.updateSeat');
+Route::post('/admin/updateSeat',[SeatController::class,'updateSeat'])->name('admin.updateSeat');
 Route::get('/admin/deleteSeat',[SeatController::class,'deleteSeat'])->name('admin.deleteSeat');

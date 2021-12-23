@@ -19,56 +19,28 @@
                 <thead>
                     <tr>
                         <th>id</th>
-                        <th>From</th>
-                        <th>To</th>
+                        <th>Location</th>
                         <th>Date</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Kathmandu</td>
-                        <td>Pokhara</td>
-                        <td>2021-12-01</td>
-                        <td>
-                            <button type="button" class="btn btn-primary"><a href="{{ route("admin.editRoute") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
-                            <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kathmandu</td>
-                        <td>Pokhara</td>
-                        <td>2021-12-01</td>
-                        <td>
-                            <button type="button" class="btn btn-primary"><a href="{{ route("admin.editRoute") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
-                            <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kathmandu</td>
-                        <td>Pokhara</td>
-                        <td>2021-12-01</td>
-                        <td>
-                            <button type="button" class="btn btn-primary"><a href="{{ route("admin.editRoute") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
-                            <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kathmandu</td>
-                        <td>Pokhara</td>
-                        <td>2021-12-01</td>
-                        <td>
-                            <button type="button" class="btn btn-primary"><a href="{{ route("admin.editRoute") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
-                            <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
-                        </td>
-                    </tr>
+                    @foreach ($routes as $route)
+                        <tr>
+                            <td>{{ $route->route_id }}</td>
+                            <td>{{ $route->from }} - {{ $route->to }}</td>
+                            <td>{{ $route->date }}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary"><a href="/admin/editRoute/{{ $route->route_id }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                                <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
+                            </td>
+                        </tr>                        
+                    @endforeach
                 </tbody>
-                
             </table>
+            <div class="row">
+                {{-- {{ $routes->links() }} --}}
+            </div>
         </div>
     </div>
 
