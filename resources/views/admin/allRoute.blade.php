@@ -11,7 +11,7 @@
                 <div class="heading fs-3">
                     All Route
                 </div>
-                <button type="button" class="btn btn-success"><a href="{{ route("addRoute") }}" class="admin-a-btn">Create Route &rarr;</a></button>
+                <button type="button" class="btn btn-success"><a href="{{ route("admin.addRoute") }}" class="admin-a-btn">Create Route &rarr;</a></button>
             </div>  
             <hr style="color: #000; height: 3px" />
             

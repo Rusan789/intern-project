@@ -12,7 +12,7 @@
                 <div class="heading fs-3">
                     Create Operator
                 </div>
-                <button type="button" class="btn btn-success"><a href="{{ route("allOperator") }}" class="admin-a-btn">All Operator &rarr;</a></button>
+                <button type="button" class="btn btn-success"><a href="{{ route("admin.getOperator") }}" class="admin-a-btn">All Operator &rarr;</a></button>
             </div>  
             <hr style="color: #000; height: 3px" class="mb-5" />
             
