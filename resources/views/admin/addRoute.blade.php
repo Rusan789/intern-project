@@ -7,8 +7,13 @@
         <hr style="width: 20%; margin: auto; color: #000; height: 3px" class="mb-5" />
 
         <div class="container route-container mb-5">
-            <form action="{{ url('uploadRoute') }}" method="post" class="pb-4">
+            <form action="{{ route('admin.createRoute') }}" method="post" class="pb-4">
                 @csrf
+                @if (Session::has('message'))
+                        <div class="alert alert-success mt-2" role="alert">
+                            {{ Session::get('message') }}
+                        </div>
+                    @endif
                 <div class="route-hb d-flex justify-content-between pt-4">
                     <div class="heading fs-3">
                         Create Route

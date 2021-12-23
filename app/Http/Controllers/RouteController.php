@@ -9,7 +9,7 @@ class RouteController extends Controller
 {
     //display add route page
     public function addRoute() {
-        return view('admin.addOperator');
+        return view('admin.addRoute');
     }
 
     //function for adding route in database
