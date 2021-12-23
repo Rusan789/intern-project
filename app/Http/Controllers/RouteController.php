@@ -30,12 +30,12 @@ class RouteController extends Controller
     }
 
     //function for getting route by id
-    public function getRouteById($route_id) {
+    public function getRouteById() {
         // $route = Route::where('route_id', $route_id)->first();
     }
 
     //function for getting route by id for updating value
-    public function editRoute($route_id) {
+    public function editRoute() {
         // $route = Route::find($route_id);
         return view('admin.editRoute');
         // return view('admin.editRoute', compact('route'));
@@ -52,7 +52,7 @@ class RouteController extends Controller
     }
 
     //function for deleting route
-    public function deleteRoute($route_id) {
+    public function deleteRoute() {
         // Route::where('id', $route_id)->delete();
         // return back()->with('message','Route deleted successfully.');
     }

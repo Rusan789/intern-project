@@ -30,7 +30,7 @@ class SeatController extends Controller
     }
 
     //function for getting seat by id for updating value
-    public function editSeat($seat_id) {
+    public function editSeat() {
         // $seat = seat::find($seat_id);
         return view('admin.editSeat');
         // return view('admin.editSeat', compact('seat'));
@@ -42,7 +42,7 @@ class SeatController extends Controller
     }
 
     //function for deleting seat
-    public function deleteSeat($seat_id) {
+    public function deleteSeat() {
 
     }
 }

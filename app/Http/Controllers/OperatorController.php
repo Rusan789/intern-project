@@ -29,19 +29,19 @@ class OperatorController extends Controller
     }
 
     //function for getting operator by id
-    public function getOperatorById($operator_id) {
+    public function getOperatorById() {
         // $operator = Operator::where('operator_id', $operator_id)->first();
     }
 
     //function for getting operator by id for updating value
-    public function editOperator($operator_id) {
+    public function editOperator() {
         // $operator = Operator::find($operator_id);
         return view('admin.editOperator');
         // return view('admin.editOperator', compact('operator'));
     }
 
     //function for updating operator
-    public function updateOperator(Request $request) {
+    public function updateOperator() {
         // $operator = Operator::find($request->operator_id);
         // $operator->operator_name = $request->operator_name;
         // $operator->save();
@@ -49,7 +49,7 @@ class OperatorController extends Controller
     }
 
     //function for deleting operator
-    public function deleteOperator($operator_id) {
+    public function deleteOperator() {
         // Operator::where('id', $operator_id)->delete();
         // return back()->with('message', 'Operator deleted successfully.');
     }

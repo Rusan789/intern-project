@@ -30,7 +30,7 @@ class BusController extends Controller
     }
 
     //function for getting bus by id for updating value
-    public function editBus($bus_id) {
+    public function editBus() {
         // $bus = bus::find($bus_id);
         return view('admin.editBus');
         // return view('admin.editBus', compact('bus'));
@@ -42,7 +42,7 @@ class BusController extends Controller
     }
 
     //function for deleting bus
-    public function deleteBus($id) {
+    public function deleteBus() {
 
     }
 }
