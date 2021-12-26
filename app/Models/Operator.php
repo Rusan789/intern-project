@@ -10,4 +10,6 @@ class Operator extends Model
     use HasFactory;
 
     protected $table = "operators";
+
+    protected $primaryKey = 'operator_id';
 }
