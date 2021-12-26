@@ -49,6 +49,16 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Operator</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>----- Select Operator -----</option>
+                        <option value="1">Kathmandu Yatayat</option>
+                        <option value="2">Hetauda Yatayat</option>
+                        <option value="3">Pokhara Yatayat</option>
+                      </select>
+                </div>
+
+                <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Time</label>
                     <input
                     type="text"
