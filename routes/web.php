@@ -68,7 +68,7 @@ Route::get('/admin/getRoute',[RouteController::class,'getRoute'])->name('admin.g
 Route::get('/admin/route/{route_id}',[RouteController::class,'getRouteById'])->name('admin.getRouteById');
 Route::get('/admin/editRoute/{route_id}',[RouteController::class,'editRoute'])->name('admin.editRoute');
 Route::post('/admin/updateRoute',[RouteController::class,'updateRoute'])->name('admin.updateRoute');
-Route::get('/admin/deleteRoute',[RouteController::class,'deleteRoute'])->name('admin.deleteRoute');
+Route::get('/admin/deleteRoute/{route_id}',[RouteController::class,'deleteRoute'])->name('admin.deleteRoute');
 
 //for seat
 Route::get('/admin/add-seat',[SeatController::class,'addSeat'])->name('admin.addSeat');

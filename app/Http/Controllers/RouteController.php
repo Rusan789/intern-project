@@ -51,8 +51,8 @@ class RouteController extends Controller
     }
 
     //function for deleting route
-    public function deleteRoute() {
-        // Route::where('id', $route_id)->delete();
-        // return back()->with('message','Route deleted successfully.');
+    public function deleteRoute($route_id) {
+        Route::where('route_id', $route_id)->delete();
+        return back()->with('message','Route deleted successfully.');
     }
 }
