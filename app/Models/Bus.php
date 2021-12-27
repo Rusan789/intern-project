@@ -10,4 +10,6 @@ class bus extends Model
     use HasFactory;
 
     protected $table = 'buses';
+
+    protected $primaryKey = 'bus_id';
 }

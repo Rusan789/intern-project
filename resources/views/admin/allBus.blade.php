@@ -3,7 +3,7 @@
 
     <!-- all bus Page -->
     <div class="route pt-5 pb-5">
-        <div class="fs-2 text-center mt-5">All Route</div>
+        <div class="fs-2 text-center mt-5">All Bus</div>
         <hr style="width: 20%; margin: auto; color: #000; height: 3px" class="mb-5" />
 
         <div class="container bus-container">

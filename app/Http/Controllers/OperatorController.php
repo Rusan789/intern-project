@@ -33,26 +33,13 @@ class OperatorController extends Controller
         // $operator = Operator::where('operator_id', $operator_id)->first();
     }
 
-    // //function for getting operator by id for updating value
-    // public function editOperator($operator_id) {
-    //     $operator = Operator::find($operator_id);
-    //     // return view('admin.editOperator');
-    //     return view('admin.editOperator', compact('operator'));
-    // }
-
-    // //function for updating operator
-    // public function updateOperator(Request $request) {
-    //     $operator = Operator::find($request->operator_id);
-    //     $operator->operator_name = $request->operator_name;
-    //     $operator->save();
-    //     return back()->with('message', 'Operator updated successfully.');
-    // }
-
+    //function for getting operator by id for updating value
     public function editOperator($operator_id) {
         $operator = Operator::find($operator_id);
         return view('admin.editOperator', compact('operator'));
     }
 
+    //function for updating operator
     public function updateOperator(Request $request) {
         $operator = Operator::find($request->operator_id);
         $operator->operator_name = $request->operator_name;
