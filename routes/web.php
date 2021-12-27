@@ -48,8 +48,8 @@ Route::get('/admin/add-bus',[BusController::class,'addBus'])->name('admin.addBus
 Route::post('/create-bus',[BusController::class,'createBus'])->name('admin.createBus');
 Route::get('/admin/getBus',[BusController::class,'getBus'])->name('admin.getBus');
 Route::get('/admin/bus',[BusController::class,'getBusById'])->name('admin.getBusById');
-Route::get('/admin/deleteBus',[BusController::class,'deleteBus'])->name('admin.deleteBus');
-Route::get('/admin/editBus',[BusController::class,'editBus'])->name('admin.editBus');
+Route::get('/admin/deleteBus/{bus_id}',[BusController::class,'deleteBus'])->name('admin.deleteBus');
+Route::get('/admin/editBus/{bus_id}',[BusController::class,'editBus'])->name('admin.editBus');
 Route::post('/admin/updateBus',[BusController::class,'updateBus'])->name('admin.updateBus');
 
 //for operator

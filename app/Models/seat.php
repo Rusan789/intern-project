@@ -10,4 +10,5 @@ class seat extends Model
     use HasFactory;
 
     protected $table = 'seats';
+    protected $primaryKey = 'seat_id';
 }

@@ -21,7 +21,6 @@
                         <th>id</th>
                         <th>Bus Name</th>
                         <th>Facilities</th>
-                        <th>Location</th>
                         <th>Time</th>
                         <th>Price</th>
                         <th>Image</th>
@@ -31,72 +30,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Tour Bus By Pokhara Yatayat</td>
-                        <td>WiFi, AC, Music System</td>
-                        <td>Kathmandu-Pokhara</td>
-                        <td>6:30 AM</td>
-                        <td>Rs: 800</td>
-                        <td><img src="../img/night-road.jpeg" alt="bus" srcset="" width="100px" height="100px"></td>
-                        <td>Ram Bahadur</td>
-                        <td>Ba 29 Cha 2160</td>
-                        <td>
-                            <button type="button" class="btn btn-primary mb-2"><a href="{{ route("admin.editBus") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
-                            <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>Tour Bus By Pokhara Yatayat</td>
-                        <td>WiFi, AC, Music System</td>
-                        <td>Kathmandu-Pokhara</td>
-                        <td>6:30 AM</td>
-                        <td>Rs: 800</td>
-                        <td><img src="../img/night-road.jpeg" alt="bus" srcset="" width="100px" height="100px"></td>
-                        <td>Ram Bahadur</td>
-                        <td>Ba 29 Cha 2160</td>
-                        <td>
-                            <button type="button" class="btn btn-primary mb-2"><a href="{{ route("admin.editBus") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
-                            <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>Tour Bus By Pokhara Yatayat</td>
-                        <td>WiFi, AC, Music System</td>
-                        <td>Kathmandu-Pokhara</td>
-                        <td>6:30 AM</td>
-                        <td>Rs: 800</td>
-                        <td><img src="../img/night-road.jpeg" alt="bus" srcset="" width="100px" height="100px"></td>
-                        <td>Ram Bahadur</td>
-                        <td>Ba 29 Cha 2160</td>
-                        <td>
-                            <button type="button" class="btn btn-primary mb-2"><a href="{{ route("admin.editBus") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
-                            <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>Tour Bus By Pokhara Yatayat</td>
-                        <td>WiFi, AC, Music System</td>
-                        <td>Kathmandu-Pokhara</td>
-                        <td>6:30 AM</td>
-                        <td>Rs: 800</td>
-                        <td><img src="../img/night-road.jpeg" alt="bus" srcset="" width="100px" height="100px"></td>
-                        <td>Ram Bahadur</td>
-                        <td>Ba 29 Cha 2160</td>
-                        <td>
-                            <button type="button" class="btn btn-primary mb-2"><a href="{{ route("admin.editBus") }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
-                            <button type="button" class="btn btn-danger"><a href="#" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
-                        </td>
-                    </tr>
-                    
-                </tbody>
-                
+                    @foreach ($buses as $bus)
+                        <tr>
+                            <td>{{ $bus->bus_id }}</td>
+                            <td>Tour Bus By {{ $bus->bus_name }}</td>
+                            <td>{{ $bus->facilities }}</td>                     
+                            <td>{{ $bus->time }}</td>
+                            <td>{{ $bus->price }}</td>
+                            <td><img src="../img/{{ $bus->img }}" alt="bus" width="100px" height="100px"></td>
+                            <td>{{ $bus->driver_name }}</td>
+                            <td>{{ $bus->bus_number }}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary mb-2"><a href="/admin/editBus/{{ $bus->bus_id }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
+                                <button type="button" class="btn btn-danger"><a href="/admin/deleteBus/{{ $bus->bus_id }}" onclick="return confirm('Are you sure want to delete this bus item?')" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
+                            </td>
+                        </tr>
+                    @endforeach                      
+                </tbody>                
             </table>
         </div>
     </div>
