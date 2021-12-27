@@ -7,6 +7,11 @@
         <hr style="width: 20%; margin: auto; color: #000; height: 3px" class="mb-5" />
 
         <div class="container route-container">
+            @if (Session::has('message'))
+                <div class="alert alert-success mt-2" role="alert">
+                    {{ Session::get('message') }}
+                </div>
+            @endif
             <form action="{{ route('admin.createBus') }}" method="post" class="pb-4" enctype="multipart/form-data">
                 @csrf
                 <div class="route-hb d-flex justify-content-between pt-4">
