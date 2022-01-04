@@ -75,6 +75,6 @@ Route::get('/admin/add-seat',[SeatController::class,'addSeat'])->name('admin.add
 Route::post('/admin/create-seat',[SeatController::class,'createSeat'])->name('admin.createSeat');
 Route::get('/admin/getSeat',[SeatController::class,'getSeat'])->name('admin.getSeat');
 Route::get('/admin/seat',[SeatController::class,'getSeatById'])->name('admin.getSeatById');
-Route::get('/admin/editSeat',[SeatController::class,'editSeat'])->name('admin.editSeat');
+Route::get('/admin/editSeat/{seat_id}',[SeatController::class,'editSeat'])->name('admin.editSeat');
 Route::post('/admin/updateSeat',[SeatController::class,'updateSeat'])->name('admin.updateSeat');
-Route::get('/admin/deleteSeat',[SeatController::class,'deleteSeat'])->name('admin.deleteSeat');
+Route::get('/admin/deleteSeat/{seat_id}',[SeatController::class,'deleteSeat'])->name('admin.deleteSeat');

@@ -7,24 +7,46 @@
         <hr style="width: 20%; margin: auto; color: #000; height: 3px" class="mb-5" />
 
         <div class="container route-container">
-            <form action="" method="post" class="pb-4">
+            @if (Session::has('message'))
+                <div class="alert alert-success mt-2" role="alert">
+                    {{ Session::get('message') }}
+                </div>
+            @endif
+            <form action="{{ route('admin.updateSeat') }}" method="post" class="pb-4">
+                @csrf
                 <div class="route-hb d-flex justify-content-between pt-4">
                     <div class="heading fs-3">
-                        Create Seat
+                        Update Seat
                     </div>
                     <button type="button" class="btn btn-success"><a href="{{ route("admin.getSeat") }}" class="admin-a-btn">All Seat &rarr;</a></button>
                 </div>  
                 <hr style="color: #000; height: 3px" class="mb-5" />
                 
+                <input type="hidden" name="seat_id" value="{{ $seat->seat_id }}">
+
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Seat Number</label>
+                    <label for="seat_number" class="form-label">Seat Number</label>
                     <input
                     type="text"
                     class="form-control"
-                    id="exampleFormControlInput1"
+                    id="seat_number"
+                    name="seat_number"
+                    value="{{ $seat->seat_number }}"
                     placeholder="Enter Seat Number.."
                     required
                     />
+                </div>
+
+                <div class="mb-3">
+                    <label for="bus_id" class="form-label">Bus</label>
+                    <select class="form-select" name="bus_id" aria-label="Default select example">
+                        <option selected>----- Select Bus -----</option>
+                        @foreach ($buses as $bus)
+                            <option value="{{ $bus->bus_id }}">{{ $bus->bus_name }}</option>
+                        @endforeach
+                        {{-- <option value="1">Kalo Bus</option>
+                        <option value="2">Ram Dai ko Bus</option> --}}
+                      </select>
                 </div>
                 <div class="btnAdmin">
                     <button type="submit" class="btn btn-success">Update Seat &rarr;</button>

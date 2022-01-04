@@ -8,7 +8,7 @@
 
         <div class="container route-container">
             @if (Session::has('message'))
-                <div class="alert alert-success mt-2" role="alert">
+                <div class="alert alert-danger mt-2" role="alert">
                     {{ Session::get('message') }}
                 </div>
             @endif
@@ -37,7 +37,7 @@
                             <td>{{ $route->date }}</td>
                             <td>
                                 <button type="button" class="btn btn-primary"><a href="/admin/editRoute/{{ $route->route_id }}" class="admin-a-action">Edit<i class="fas fa-edit admin-fa"></i></a></button>
-                                <button type="button" class="btn btn-danger"><a href="/admin/deleteRoute/{{ $route->route_id }}" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
+                                <button type="button" class="btn btn-danger"><a href="/admin/deleteRoute/{{ $route->route_id }}" onclick="return confirm('Are you sure want to delete this bus item?')" class="admin-a-action">Delete<i class="fas fa-trash-alt admin-fa"></i></a></button>
                             </td>
                         </tr>                        
                     @endforeach
