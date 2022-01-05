@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer class="p-3 bg-secondary text-white position-relative">
     <div class="container">
-      <div class="footer text-center g-3">
+      <div class="footer text-left g-3">
         <div class="row">
           <div class="about col-lg-6 mb-sm-3">
             <h3>About Us</h3>

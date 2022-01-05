@@ -26,7 +26,7 @@ class SeatController extends Controller
 
     //function for getting seat details from database
     public function getSeat() {
-        $seats = seat::orderBy('seat_id', 'Asc')->get();
+        $seats = seat::orderBy('seat_id', 'Asc')->paginate(5);
         // return view('admin.allSeat');
         return view('admin.allSeat', compact('seats'));
     }

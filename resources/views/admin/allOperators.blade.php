@@ -1,9 +1,9 @@
-@extends("layouts.main")
+@extends('layouts.main')
 @section('content')
 
-    <!-- all operator Page -->
+    <!-- all seat Page -->
     <div class="route pt-5 pb-5">
-        <div class="fs-2 text-center mt-5">All Operator</div>
+        <div class="fs-2 text-center mt-5">All Operators</div>
         <hr style="width: 20%; margin: auto; color: #000; height: 3px" class="mb-5" />
 
         <div class="container route-container">
@@ -14,7 +14,7 @@
             @endif
             <div class="route-hb d-flex justify-content-between pt-4">
                 <div class="heading fs-3">
-                    All Operator
+                    All Operators
                 </div>
                 <button type="button" class="btn btn-success"><a href="{{ route("admin.addOperator") }}" class="admin-a-btn">Create Operator &rarr;</a></button>
             </div>  
@@ -42,6 +42,9 @@
                 </tbody>
                 
             </table>
+            <div class="d-flex mt-2 justify-content-center">
+                {{ $operators->links() }}
+            </div>
         </div>
     </div>
 

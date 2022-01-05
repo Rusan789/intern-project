@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Operator;
-use App\Models\Route;
 use Illuminate\Http\Request;
 
 class OperatorController extends Controller
@@ -13,33 +12,33 @@ class OperatorController extends Controller
         return view('admin.addOperator');
     }
 
-    //function for adding operator in database
+    //function for adding seat in database
     public function createOperator(Request $request) {
-        $operator = new Operator();
-        $operator->operator_name = $request->operator_name;
-        $operator->save();
-        return back()->with('message', 'Operator added successfully.');
+        $operators = new Operator();
+        $operators->operator_name = $request->operator_name;
+        $operators->save();
+        return back()->with('message', 'Seat added successfully.');
     }
 
-    //function for getting operator details from database
+    //function for getting seat details from database
     public function getOperator() {
-        $operators = Operator::orderBy('operator_id', 'Asc')->get();
-        // return view('admin.allOperator');
-        return view('admin.allOperator',compact('operators'));
+        $operators = Operator::orderBy('operator_id', 'Asc')->paginate(5);
+        // return view('admin.allSeat');
+        return view('admin.allOperators', compact('operators'));
     }
 
     //function for getting operator by id
     public function getOperatorById() {
-        // $operator = Operator::where('operator_id', $operator_id)->first();
+        // here goes code if we need to get operator by its id
     }
 
-    //function for getting operator by id for updating value
+    //function for getting Operator by id for updating value
     public function editOperator($operator_id) {
         $operator = Operator::find($operator_id);
         return view('admin.editOperator', compact('operator'));
     }
 
-    //function for updating operator
+    //function for updating seat
     public function updateOperator(Request $request) {
         $operator = Operator::find($request->operator_id);
         $operator->operator_name = $request->operator_name;
@@ -47,9 +46,9 @@ class OperatorController extends Controller
         return back()->with('message', 'Operator updated successfully.');
     }
 
-    //function for deleting operator
-    public function deleteOperator($operator_id) {
-        Operator::where('operator_id', $operator_id)->delete();
-        return back()->with('message', 'Operator deleted successfully.');
+    //function for deleting Operator
+    public function deleteSeat($operator_id) {
+        Operator::where('seat_id',$operator_id)->delete();
+        return back()->with('message','Operator deleted successfully');
     }
 }

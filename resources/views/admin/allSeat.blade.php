@@ -42,6 +42,9 @@
                 </tbody>
                 
             </table>
+            <div class="d-flex mt-2 justify-content-center">
+                {{ $seats->links() }}
+            </div>
         </div>
     </div>
 

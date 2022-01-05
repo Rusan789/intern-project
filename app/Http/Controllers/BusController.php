@@ -47,7 +47,7 @@ class BusController extends Controller
 
     //function for getting bus details from database
     public function getBus() {
-        $buses = bus::orderBy('bus_id', 'Asc')->get();
+        $buses = bus::orderBy('bus_id', 'Asc')->paginate(5);
         return view('admin.allBus', compact('buses'));
     }
 

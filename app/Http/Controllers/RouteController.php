@@ -24,8 +24,9 @@ class RouteController extends Controller
 
     //function for getting route details from database
     public function getRoute() {
-        $routes = Route::orderBy('route_id','Asc')->get();
+        $routes = Route::orderBy('route_id','Asc')->paginate(5);
         // return view('admin.allRoute');
+
         return view('admin.allRoute',compact('routes'));
     }
 
