@@ -33,9 +33,13 @@
                     placeholder="Travelling From..."
                     name="from"
                     value="{{ $route->from }}"
-                    required
                     />
                 </div>
+
+                @error('from')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
+
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Travelling To</label>
                     <input
@@ -45,9 +49,13 @@
                     placeholder="Travelling To"
                     name="to"
                     value="{{ $route->to }}"
-                    required
                     />
                 </div>
+
+                @error('to')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
+
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Date</label>
                     <input

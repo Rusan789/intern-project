@@ -33,9 +33,17 @@
                     name="operator_name"
                     value="{{ $operator->operator_name }}"
                     placeholder="Enter Name Of Bus Operator.."
-                    required
                     />
                 </div>
+                @if ($errors->any())
+                <div>
+                    @foreach ($errors->all() as $error)
+                        <p style="color: red">
+                            {{ $error }}
+                        </p>
+                    @endforeach
+                </div>
+            @endif
                 <div class="btnAdmin">
                     <button type="submit" class="btn btn-success">Update Operator &rarr;</button>
                 </div>

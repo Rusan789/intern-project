@@ -14,6 +14,9 @@ class OperatorController extends Controller
 
     //function for adding seat in database
     public function createOperator(Request $request) {
+        $request->validate([
+            'operator_name' => 'required|unique:operators'
+        ]);
         $operators = new Operator();
         $operators->operator_name = $request->operator_name;
         $operators->save();
@@ -40,6 +43,9 @@ class OperatorController extends Controller
 
     //function for updating seat
     public function updateOperator(Request $request) {
+        $request->validate([
+            'operator_name' => 'required'
+        ]);
         $operator = Operator::find($request->operator_id);
         $operator->operator_name = $request->operator_name;
         $operator->save();

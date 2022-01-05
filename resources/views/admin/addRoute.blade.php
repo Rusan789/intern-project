@@ -30,9 +30,13 @@
                     name="from"
                     id="from"
                     placeholder="Travelling From..."
-                    required
                     />
                 </div>
+
+                @error('from')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
+
                 <div class="mb-3">
                     <label for="to" class="form-label">Travelling To</label>
                     <input
@@ -41,9 +45,13 @@
                     name="to"
                     id="to"
                     placeholder="Travelling To"
-                    required
                     />
                 </div>
+
+                @error('to')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
+
                 <div class="mb-3">
                     <label for="date" class="form-label">Date</label>
                     <input
@@ -51,9 +59,13 @@
                     class="form-control"
                     name="date"
                     id="date"
-                    required
                     />
                 </div>
+
+                @error('date')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
+
                 <div class="btnAdmin">
                     <button type="submit" class="btn btn-success">Add Route &rarr;</button>
                 </div>

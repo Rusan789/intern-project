@@ -17,6 +17,9 @@ class SeatController extends Controller
 
     //function for adding seat in database
     public function createSeat(Request $request) {
+        $request->validate([
+            'seat_number' => 'required'
+        ]);
         $seats = new seat();
         $seats->seat_number = $request->seat_number;
         $seats->bus_id = $request->bus_id;
@@ -45,6 +48,9 @@ class SeatController extends Controller
 
     //function for updating seat
     public function updateSeat(Request $request) {
+        $request->validate([
+            'seat_number' => 'required'
+        ]);
         $seat = seat::find($request->seat_id);
         $seat->seat_number = $request->seat_number;
         $seat->bus_id = $request->bus_id;

@@ -30,9 +30,12 @@
                     id="bus_name"
                     name="bus_name"
                     placeholder="Bus Name"
-                    required
                     />
                 </div>
+
+                @error('bus_name')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="facilities" class="form-label">Facilities</label>
@@ -42,9 +45,12 @@
                     id="facilities"
                     name="facilities"
                     placeholder="Facilities"
-                    required
                     />
                 </div>
+
+                @error('facilities')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="route_id" class="form-label">Location</label>
@@ -53,11 +59,12 @@
                         @foreach ($routes as $route)
                             <option value="{{ $route->route_id }}">{{ $route->from }} - {{ $route->to }}</option>
                         @endforeach
-                        
-                        {{-- <option value="2">Hetauda-Pokhara</option>
-                        <option value="3">Kathmandu-Pokhara</option> --}}
                       </select>
                 </div>
+
+                @error('route_id')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="operator_id" class="form-label">Operator</label>
@@ -66,11 +73,12 @@
                         @foreach ($operators as $operator)
                             <option value="{{ $operator->operator_id }}">{{ $operator->operator_name }}</option>
                         @endforeach
-                        
-                        {{-- <option value="2">Hetauda Yatayat</option>
-                        <option value="3">Pokhara Yatayat</option> --}}
                       </select>
                 </div>
+
+                @error('operator_id')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="time" class="form-label">Time</label>
@@ -80,9 +88,12 @@
                     id="time"
                     name="time"
                     placeholder="Time"
-                    required
                     />
                 </div>
+
+                @error('time')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
@@ -92,9 +103,12 @@
                     id="price"
                     name="price"
                     placeholder="Price"
-                    required
                     />
                 </div>
+
+                @error('price')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="img" class="form-label">Bus Image</label>
@@ -103,9 +117,12 @@
                     class="form-control"
                     id="img"
                     name="file"
-                    required
                     />
                 </div>
+
+                @error('img')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="driver_name" class="form-label">Driver's Name</label>
@@ -115,9 +132,12 @@
                     id="driver_name"
                     name="driver_name"
                     placeholder="Driver Name"
-                    required
                     />
                 </div>
+
+                @error('driver_name')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="bus_number" class="form-label">Bus Number</label>
@@ -127,9 +147,13 @@
                     id="bus_number"
                     name="bus_number"
                     placeholder="Bus Number"
-                    required
                     />
                 </div>
+
+                @error('bus_number')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
+
                 <div class="btnAdmin">
                     <button type="submit" class="btn btn-success">Add Bus &rarr;</button>
                 </div>

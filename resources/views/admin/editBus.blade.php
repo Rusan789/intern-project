@@ -33,9 +33,12 @@
                     name="bus_name"
                     value="{{ $bus->bus_name }}"
                     placeholder="Bus Name"
-                    required
                     />
                 </div>
+
+                @error('bus_name')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="facilities" class="form-label">Facilities</label>
@@ -46,9 +49,12 @@
                     name="facilities"
                     value="{{ $bus->facilities }}"
                     placeholder="Facilities"
-                    required
                     />
                 </div>
+
+                @error('facilities')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="route" class="form-label">Location</label>
@@ -57,9 +63,6 @@
                         @foreach ($routes as $route)
                             <option value="{{ $route->route_id }}">{{ $route->from }} - {{ $route->to }}</option>
                         @endforeach
-                        
-                        {{-- <option value="2">Hetauda-Pokhara</option>
-                        <option value="3">Kathmandu-Pokhara</option> --}}
                       </select>
                 </div>
 
@@ -70,9 +73,6 @@
                         @foreach ($operators as $operator)
                             <option value="{{ $operator->operator_id }}">{{ $operator->operator_name }}</option>
                         @endforeach
-                        
-                        {{-- <option value="2">Hetauda Yatayat</option>
-                        <option value="3">Pokhara Yatayat</option> --}}
                       </select>
                 </div>
 
@@ -85,9 +85,12 @@
                     name="time"
                     value="{{ $bus->time }}"
                     placeholder="Time"
-                    required
                     />
                 </div>
+
+                @error('time')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
@@ -98,9 +101,12 @@
                     name="price"
                     value="{{ $bus->price }}"
                     placeholder="Price"
-                    required
                     />
                 </div>
+
+                @error('price')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="img" class="form-label">Bus Image</label>
@@ -109,9 +115,12 @@
                     class="form-control"
                     id="img"
                     name="file"
-                    required
                     />
                 </div>
+
+                @error('img')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="driver_name" class="form-label">Driver's Name</label>
@@ -122,9 +131,12 @@
                     name="driver_name"
                     value="{{ $bus->driver_name }}"
                     placeholder="Driver Name"
-                    required
                     />
                 </div>
+
+                @error('driver_name')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="bus_number" class="form-label">Bus Number</label>
@@ -135,9 +147,12 @@
                     name="bus_number"
                     value="{{ $bus->bus_number }}"
                     placeholder="Bus Number"
-                    required
                     />
                 </div>
+
+                @error('bus_number')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
                 <div class="btnAdmin">
                     <button type="submit" class="btn btn-success">Update Bus &rarr;</button>
                 </div>

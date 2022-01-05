@@ -14,6 +14,11 @@ class RouteController extends Controller
 
     //function for adding route in database
     public function createRoute(Request $request) {
+        $request->validate([
+            'from' => 'required',
+            'to' => 'required',
+            'date' => 'required'
+        ]);
         $route = new Route();
         $route->from = $request->from;
         $route->to = $request->to;
@@ -43,6 +48,11 @@ class RouteController extends Controller
 
     //function for updating route
     public function updateRoute(Request $request) {
+        $request->validate([
+            'from' => 'required',
+            'to' => 'required',
+            'date' => 'required'
+        ]);
         $route = Route::find($request->route_id);
         $route->from = $request->from;
         $route->to = $request->to;

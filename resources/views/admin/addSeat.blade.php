@@ -30,9 +30,12 @@
                     id="seat_number"
                     name="seat_number"
                     placeholder="Enter Seat Number.."
-                    required
                     />
                 </div>
+
+                @error('seat_number')
+                    <div class="text-danger pb-2">{{ $message }}</div>
+                @enderror
 
                 <div class="mb-3">
                     <label for="bus_id" class="form-label">Bus</label>
