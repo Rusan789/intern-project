@@ -27,6 +27,8 @@
                         <th>Bus Name</th>
                         <th>Facilities</th>
                         <th>Time</th>
+                        <th>Route</th>
+                        <th>Operator</th>
                         <th>Price</th>
                         <th>Image</th>
                         <th>Driver Name</th>
@@ -41,6 +43,8 @@
                             <td>Tour Bus By {{ $bus->bus_name }}</td>
                             <td>{{ $bus->facilities }}</td>                     
                             <td>{{ $bus->time }}</td>
+                            <td>{{ $bus->route->from }} - {{ $bus->route->to }}</td>
+                            <td>{{ $bus->operator->operator_name }}</td>
                             <td>{{ $bus->price }}</td>
                             <td><img src="../img/{{ $bus->img }}" alt="bus" width="100px" height="100px"></td>
                             <td>{{ $bus->driver_name }}</td>

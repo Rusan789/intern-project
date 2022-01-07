@@ -8,45 +8,37 @@
             <form action="" class="p-4">
                 <div class="row g-3">
                     <div class="m-3 col-lg">
-                        <label for="exampleFormControlInput1" class="form-label bus-label">From</label
-            >
-            <input
-                type="text"
-                class="form-control p-2"
-                id="exampleFormControlInput1"
-                placeholder="Travelling From"
-            />
-            </div>
-            <div class="m-3 col-lg">
-            <label for="exampleFormControlInput1" class="form-label bus-label"
-                >To</label
-            >
-            <input
-                type="text"
-                class="form-control p-2"
-                id="exampleFormControlInput1"
-                placeholder="Travelling To"
-            />
-            </div>
-            <div class="m-3 col-lg">
-            <label for="exampleFormControlInput1" class="form-label bus-label"
-                >Date</label
-            >
-            <input
-                type="date"
-                class="form-control p-2"
-                id="exampleFormControlInput1"
-                placeholder="name@example.com"
-            />
-            </div>
-            <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-primary bus-btn p-2">
-                Search Bus &rarr;
-            </button>
-            </div>
+                        <label for="bus_name" class="form-label bus-label">Bus Name</label
+                        >
+                        <input
+                            type="search"
+                            class="form-control p-2"
+                            id="bus_name"
+                            placeholder="Search from bus name: like - Pokhara Yatayat, Kathmandu yatayat"
+                            name="search"
+                        />
+                        
+                    </div>
+                    <div class="m-3 col-lg">
+                        <label for="time" class="form-label bus-label"
+                            >Time</label
+                        >
+                        <input
+                            type="search"
+                            class="form-control p-2"
+                            id="time"
+                            placeholder="Search from time: like - 6:00 AM, 5:00 AM"
+                            name="search1"
+                        />
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary bus-btn p-2">
+                            Search Bus &rarr;
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
-        </form>
-    </div>
     </div>
 
     <!-- Search Bus main body section -->
@@ -78,104 +70,47 @@
                     </div>
 
                     <div class="bus-lists col-lg-7 col-md-6">
-                        <div class="list-of-bus mb-4">
-                            <div class="priceFlex">
-                                <div class="bus-des">
-                                    <div class="row">
-                                        <div class="bus-image col-lg-9">
+                        @if ($buses->count()>0)
+                            @foreach ($buses as $bus)
+                                <div class="list-of-bus mb-4">
+                                    <div class="priceFlex">
+                                        <div class="bus-des">
                                             <div class="row">
-                                                <div class="image col-lg-3">
-                                                    <img src="{{ url("frontend/img/night-road.jpeg") }}" alt="bus" width="100px" height="100px" />
+                                                <div class="bus-image col-lg-9">
+                                                    <div class="row">
+                                                        <div class="image col-lg-3">
+                                                            <img src="{{ url("img") }}/{{ $bus->img }}" alt="bus" width="100px" height="100px" />
+                                                        </div>
+                                                        <div class="desc col-lg-9">
+                                                            <h4>Tourist Bus By {{ $bus->bus_name }}</h4>
+                                                            <h5>Facilities:</h5>
+                                                            {{ $bus->facilities }}
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="desc col-lg-9">
-                                                    <h4>Tourist Bus By Pokhara Yatayat</h4>
-                                                    <h5>Facilities:</h5>
-                                                    Wifi, Ac, Music System, Charging Port
+
+                                                <div class="flex-price col-lg-3">
+                                                    <h4>Price</h4>
+                                                    <h5 class="mb-3">{{ $bus->price }}</h5>
+                                                    <button type="button" class="btn btn-primary mb-3"><a class="btnBus" href="{{ route("user.busDetails") }}">Select &rarr;</a></button>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="flex-price col-lg-3">
-                                            <h4>Price</h4>
-                                            <h5 class="mb-3">Rs. 800</h5>
-                                            <button type="button" class="btn btn-primary mb-3"><a class="btnBus" href="{{ route("user.busDetails") }}">Select &rarr;</a></button>
-                                        </div>
+                                        </div>                                
                                     </div>
-                                </div>                                
-                            </div>
-                            <div class="main-desc">
-                                <i class="fas fa-location fs-5 pb-2">&nbsp; &nbsp;<span class="location-span">kathmandu - pokhara</span></i>
-                                <br>
-                                <i class="fas fa-clock fs-5 pb-2">&nbsp; &nbsp;<span class="location-span">6:30 AM</span></i>
-                                <br>
-                                <i class="fas fa-chair-office fs-5">&nbsp; &nbsp;<span class="location-span">20 Available Seats</span></i>
-                            </div>
-                        </div>
-                        <div class="list-of-bus mb-4">
-                            <div class="priceFlex">
-                                <div class="bus-des">
-                                    <div class="row">
-                                        <div class="bus-image col-lg-9">
-                                            <div class="row">
-                                                <div class="image col-lg-3">
-                                                    <img src="{{ url("frontend/img/night-road.jpeg") }}" alt="bus" width="100px" height="100px" />
-                                                </div>
-                                                <div class="desc col-lg-9">
-                                                    <h4>Tourist Bus By Pokhara Yatayat</h4>
-                                                    <h5>Facilities:</h5>
-                                                    Wifi, Ac, Music System, Charging Port
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="flex-price col-lg-3">
-                                            <h4>Price</h4>
-                                            <h5 class="mb-3">Rs. 800</h5>
-                                            <button type="button" class="btn btn-primary mb-3"><a class="btnBus" href="{{ route("user.busDetails") }}">Select &rarr;</a></button>
-                                        </div>
+                                    <div class="main-desc">
+                                        <i class="fas fa-location fs-5 pb-2">&nbsp; &nbsp;<span class="location-span">{{ $bus->route->from }} - {{ $bus->route->to }}</span></i>
+                                        <br>
+                                        <i class="fas fa-clock fs-5 pb-2">&nbsp; &nbsp;<span class="location-span">{{ $bus->time }}</span></i>
+                                        <br>
+                                        <i class="fas fa-chair-office fs-5">&nbsp; &nbsp;<span class="location-span">20 Available Seats</span></i>
                                     </div>
-                                </div>                                
-                            </div>
-                            <div class="main-desc">
-                                <i class="fas fa-location fs-5 pb-2">&nbsp; &nbsp;<span class="location-span">kathmandu - pokhara</span></i>
-                                <br>
-                                <i class="fas fa-clock fs-5 pb-2">&nbsp; &nbsp;<span class="location-span">6:30 AM</span></i>
-                                <br>
-                                <i class="fas fa-chair-office fs-5">&nbsp; &nbsp;<span class="location-span">20 Available Seats</span></i>
-                            </div>
-                        </div>
-                        <div class="list-of-bus mb-4">
-                            <div class="priceFlex">
-                                <div class="bus-des">
-                                    <div class="row">
-                                        <div class="bus-image col-lg-9">
-                                            <div class="row">
-                                                <div class="image col-lg-3">
-                                                    <img src="{{ url("frontend/img/night-road.jpeg") }}" alt="bus" width="100px" height="100px" />
-                                                </div>
-                                                <div class="desc col-lg-9">
-                                                    <h4>Tourist Bus By Pokhara Yatayat</h4>
-                                                    <h5>Facilities:</h5>
-                                                    Wifi, Ac, Music System, Charging Port
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="flex-price col-lg-3">
-                                            <h4>Price</h4>
-                                            <h5 class="mb-3">Rs. 800</h5>
-                                            <button type="button" class="btn btn-primary mb-3"><a class="btnBus" href="{{ route("user.busDetails") }}">Select &rarr;</a></button>
-                                        </div>
-                                    </div>
-                                </div>                                
-                            </div>
-                            <div class="main-desc">
-                                <i class="fas fa-location fs-5 pb-2">&nbsp; &nbsp;<span class="location-span">kathmandu - pokhara</span></i>
-                                <br>
-                                <i class="fas fa-clock fs-5 pb-2">&nbsp; &nbsp;<span class="location-span">6:30 AM</span></i>
-                                <br>
-                                <i class="fas fa-chair-office fs-5">&nbsp; &nbsp;<span class="location-span">20 Available Seats</span></i>
-                            </div>
+                                </div>
+                            @endforeach
+                        @else
+                            <p style="padding-top:30px; text-align:center; font-size:2.5rem; color:red; font-weight:bold;">Bus Not Found!!!</p>
+                        @endif
+                        <div class="d-flex mt-2 justify-content-center">
+                            {{ $buses->links() }}
                         </div>
                     </div>
                 </div>

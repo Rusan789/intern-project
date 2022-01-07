@@ -67,6 +67,11 @@
                                         <li>
                                             <a class="dropdown-item" href="{{ route('admin.getSeat') }}">Manage Seat</a>
                                         </li>
+
+                                        <li>
+                                            <a href="{{ route('profile.show') }}" class="dropdown-item">Dashboard</a>
+                                        </li>
+
                                         <li>
                                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-a').submit();">Logout</a>
                                         </li>
@@ -82,6 +87,10 @@
                                         {{ Auth::user()->name }}
                                     </a>
                                     <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                                        <li>
+                                            <a href="{{ route('profile.show') }}" class="dropdown-item">Dashboard</a>
+                                        </li>
+                                        
                                         <li>
                                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-a').submit();">Logout</a>
                                         </li>

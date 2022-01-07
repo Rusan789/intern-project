@@ -12,4 +12,12 @@ class bus extends Model
     protected $table = 'buses';
 
     protected $primaryKey = 'bus_id';
+
+    public function route() {
+        return $this->belongsTo(Route::class,'route_id');
+    }
+
+    public function operator() {
+        return $this->belongsTo(Operator::class,'operator_id');
+    }
 }

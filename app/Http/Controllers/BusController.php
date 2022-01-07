@@ -24,18 +24,13 @@ class BusController extends Controller
 
     //function for adding bus in database
     public function createBus(Request $request) {
-        $request->validate([
+        $this->validate($request,[
             'bus_name' => 'required|unique:buses',
             'facilities' => 'required',
             'time' => 'required',
-            'price' => 'required',
-            'driver_name' => 'required|unique:buses',
-            'bus_number' => 'required|unique:buses',
-            'route_id' => 'required',
-            'operator_id' => 'required',
-            'img' => 'required'
+            'price' => 'required'
         ]);
-        $buses = new bus();   
+        $buses = new bus();
         $buses->bus_name = $request->bus_name;
         $buses->facilities = $request->facilities;
         $buses->time = $request->time;
@@ -76,17 +71,17 @@ class BusController extends Controller
 
     //function for updating bus
     public function updateBus(Request $request) {
-        $request->validate([
-            'bus_name' => 'required',
-            'facilities' => 'required',
-            'time' => 'required',
-            'price' => 'required',
-            'driver_name' => 'required',
-            'bus_number' => 'required',
-            'route_id' => 'required',
-            'operator_id' => 'required',
-            'img' => 'required'
-        ]);
+        // $request->validate([
+        //     'bus_name' => 'required',
+        //     'facilities' => 'required',
+        //     'time' => 'required',
+        //     'price' => 'required',
+        //     'driver_name' => 'required',
+        //     'bus_number' => 'required',
+        //     'route_id' => 'required',
+        //     'operator_id' => 'required',
+        //     'img' => 'required'
+        // ]);
         $bus = bus::find($request->bus_id);
         $bus->bus_name = $request->bus_name;
         $bus->facilities = $request->facilities;

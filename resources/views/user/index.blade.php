@@ -40,47 +40,40 @@
         <div class="container-fluid">
             <h2 class="searchBus pt-5 text-uppercase">Search Bus</h2>
             <hr style="width: 20%; margin: auto; color: #000; height: 3px" />
+            
             <form action="" class="p-4">
-                <div class="row g-3">
-                    <div class="m-3 col-lg">
-                        <label for="exampleFormControlInput1" class="form-label bus-label">From</label
-              >
-              <input
-                type="text"
-                class="form-control p-2"
-                id="exampleFormControlInput1"
-                placeholder="Travelling From"
-              />
-            </div>
-            <div class="m-3 col-lg">
-              <label for="exampleFormControlInput1" class="form-label bus-label"
-                >To</label
-              >
-              <input
-                type="text"
-                class="form-control p-2"
-                id="exampleFormControlInput1"
-                placeholder="Travelling To"
-              />
-            </div>
-            <div class="m-3 col-lg">
-              <label for="exampleFormControlInput1" class="form-label bus-label"
-                >Date</label
-              >
-              <input
-                type="date"
-                class="form-control p-2"
-                id="exampleFormControlInput1"
-                placeholder="name@example.com"
-              />
-            </div>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="btn btn-primary bus-btn p-2">
-                <a href="{{ route('user.searchBus') }}">Search Bus &rarr;</a>
-              </button>
-            </div>
-          </div>
-        </form>
+              <div class="row g-3">
+                  <div class="m-3 col-lg">
+                      <label for="bus_name" class="form-label bus-label">Bus Name</label
+                      >
+                      <input
+                          type="search"
+                          class="form-control p-2"
+                          id="bus_name"
+                          placeholder="Search from bus name: like - Pokhara Yatayat, Kathmandu yatayat"
+                          name="search"
+                      />
+                      
+                  </div>
+                  <div class="m-3 col-lg">
+                      <label for="time" class="form-label bus-label"
+                          >Time</label
+                      >
+                      <input
+                          type="search"
+                          class="form-control p-2"
+                          id="time"
+                          placeholder="Search from time: like - 6:00 AM, 5:00 AM"
+                          name="search1"
+                      />
+                  </div>
+                  <div class="d-flex justify-content-center pb-5">
+                      <button type="button" class="btn btn-primary bus-btn p-2">
+                        <a href="{{ route('user.busSearch') }}">Search Bus &rarr;</a>
+                      </button>
+                  </div>
+              </div>
+          </form>
       </div>
     </div>
 

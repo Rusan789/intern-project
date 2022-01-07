@@ -20,7 +20,7 @@ class OperatorController extends Controller
         $operators = new Operator();
         $operators->operator_name = $request->operator_name;
         $operators->save();
-        return back()->with('message', 'Seat added successfully.');
+        return back()->with('message', 'Operator added successfully.');
     }
 
     //function for getting seat details from database

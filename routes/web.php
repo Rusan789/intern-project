@@ -23,14 +23,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//auth routes
-//for customer
+// // auth routes
+// // for customer
 // Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 //     Route::get('users/dashboard', userDashboard::class)
 //         ->name('userDashboard');
 // });
 
-//For Admin
+// // For Admin
 // Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function() {
 //     Route::get('/admin/adminDashboard', adminDashboard::class)
 //         ->name('admindashboard');
@@ -39,10 +39,19 @@ use Illuminate\Support\Facades\Route;
 
 
 // User
+//for index page
 Route::get('/', [HomeController::class, "index"])->name('user.userHome');
+
+//for bus detail page
 Route::get('/busDetails', [BusDetails::class, "index"])->name('user.busDetails');
+
+//for search page
 Route::get('/searchBus', [SearchBus::class, "index"])->name('user.searchBus');
 
+Route::get('/bus', [HomeController::class, "search"])->name('user.busSearch');
+
+
+//admin
 //for bus
 Route::get('/admin/add-bus',[BusController::class,'addBus'])->name('admin.addBus');
 Route::post('/create-bus',[BusController::class,'createBus'])->name('admin.createBus');
@@ -78,3 +87,8 @@ Route::get('/admin/seat',[SeatController::class,'getSeatById'])->name('admin.get
 Route::get('/admin/editSeat/{seat_id}',[SeatController::class,'editSeat'])->name('admin.editSeat');
 Route::post('/admin/updateSeat',[SeatController::class,'updateSeat'])->name('admin.updateSeat');
 Route::get('/admin/deleteSeat/{seat_id}',[SeatController::class,'deleteSeat'])->name('admin.deleteSeat');
+
+//middleware route for authentication
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
