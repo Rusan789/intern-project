@@ -83,6 +83,7 @@
                                                         </div>
                                                         <div class="desc col-lg-9">
                                                             <h4>Tourist Bus By {{ $bus->bus_name }}</h4>
+                                                            <h5>By: {{ $bus->operator->operator_name }}</h5>
                                                             <h5>Facilities:</h5>
                                                             {{ $bus->facilities }}
                                                         </div>
