@@ -5,11 +5,13 @@
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\busDetails;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\searchBus;
 use App\Http\Controllers\SeatController;
 use App\Http\Controllers\ShowOperators;
+use App\Http\Controllers\TicketContoller;
 // use App\Http\Controllers\userDashboard;
 use Illuminate\Support\Facades\Route;
 
@@ -85,3 +87,8 @@ Route::get('/admin/deleteRoute/{route_id}',[RouteController::class,'deleteRoute'
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+//for invoice
+Route::get('/khalti/verifyPayment',[InvoiceController::class, 'addInvoice'])->name('khalti.verifyPayment');
+Route::post('/khalti/verifyPayment/create',[InvoiceController::class,'verify'])->name('payment.create');
+Route::get('/ticket/{bus_id}', [TicketContoller::class, "index"])->name('user.ticket');

@@ -87,7 +87,7 @@
                                 </div>
                             
                             <div class="payment mt-5 text-center">
-                                <button type="button" class="btn btn-primary">Proceed To Payment &rarr;</button>
+                                <button id="payment-button" class="btn btn-primary"><a class="btnBus" href="{{ route('khalti.verifyPayment') }}">Pay with Khalti &rarr;</a></button>
                             </div>                            
                         </div>
                     </div>
@@ -96,18 +96,65 @@
             </div>
         </div>
     </div>
-
-    {{-- @push('scripts')
-        <script>
-            function calculate() {
-                var n1 = parseInt(document.getElementById('seatNumber').value);
-                var n2 = parseInt(document.getElementById('seatPrice').value);
-                var res = document.getElementById('result').value;
-
-                if(res === '*') {
-                    document.getElementById('totalPrice').value = n1*n2;
+    {{-- <script>
+        function payWithKhalti() {
+            var config = {
+            // replace the publicKey with yours
+            "publicKey": "{{ config('app.khalti_public_key') }}",
+            "productIdentity": "1234567890",
+            "productName": "Tourist Bus By Kathmandu Yatayat",
+            "productUrl": "http://127.0.0.1:8000/busDetails/1",
+            "paymentPreference": [
+                "KHALTI",
+                "EBANKING",
+                "MOBILE_BANKING",
+                "CONNECT_IPS",
+                "SCT",
+                ],
+            "eventHandler": {
+                onSuccess (payload) {
+                    // hit merchant api for initiating verfication
+                    $.ajax({
+                        type : 'POST',
+                        url : "{{ route('khalti.verifyPayment') }}",
+                        data: {
+                            token : payload.token,
+                            amount : payload.amount,
+                            '_token' : "{{ csrf_token() }}"
+                        },
+                        success : function(response){
+                            $.ajax({
+                                type : "POST",
+                                url : "{{ route('khalti.storePayment') }}",
+                                data : {
+                                    'response' : response,
+                                    '_token' : "{{ csrf_token() }}"
+                                },
+                                success : function(response) {
+                                    console.log("transaction successfull.");
+                                }
+                            });
+                            console.log(response);
+                        }
+                    });
+                    console.log(payload);
+                },
+                onError (error) {
+                    console.log(error);
+                },
+                onClose () {
+                    console.log('widget is closing');
                 }
-            }            
-        </script>
-    @endpush --}}
+            }
+        };
+
+        var checkout = new KhaltiCheckout(config);
+        var btn = document.getElementById("payment-button");
+        btn.onclick = function () {
+            // minimum transaction amount must be 10, i.e 1000 in paisa.
+            checkout.show({amount: 1000});
+        }
+        }
+        
+    </script> --}}
 @endsection
