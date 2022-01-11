@@ -3,12 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\bus;
+use App\Models\Operator;
 use App\Models\Route;
 use Illuminate\Http\Request;
 
+use function Ramsey\Uuid\v1;
+
 class SearchBus extends Controller
 {
-    public function index(Request $request) {
+
+    // public function index() {
+    //     $operators = Operator::all();
+    //     return view('user.searchBus', compact('operators'));
+    // }
+
+    public function search(Request $request) {
         $search = $request['search'] ?? "";
         $search1 = $request['search1'] ?? "";
         if ($search != "") {
@@ -19,7 +28,7 @@ class SearchBus extends Controller
             ->paginate(3);
         }else {
             $buses = bus::orderBy('bus_id', 'Asc')->paginate(3);
-        }      
-        return view('user.searchBus',compact('buses'));
+        }
+        return view('user.searchBus',['buses'=>$buses]);
     }
 }

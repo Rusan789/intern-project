@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\bus;
 use App\Models\Route;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     public function index() {
         $routes = Route::all();
-        return view('user.index',compact('routes'));
+        $route = DB::table('routes')->count();
+        $buses = DB::table('buses')->count();
+        $users = DB::table('users')->count();
+        return view('user.index',compact('routes', 'route', 'buses', 'users'));
     }
 
     

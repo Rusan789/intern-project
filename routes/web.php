@@ -9,6 +9,7 @@ use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\searchBus;
 use App\Http\Controllers\SeatController;
+use App\Http\Controllers\ShowOperators;
 // use App\Http\Controllers\userDashboard;
 use Illuminate\Support\Facades\Route;
 
@@ -43,18 +44,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, "index"])->name('user.userHome');
 
 //for bus detail page
-Route::get('/busDetails', [BusDetails::class, "index"])->name('user.busDetails');
+Route::get('/busDetails/{bus_id}', [BusDetails::class, "index"])->name('user.busDetails');
 
 //for search page
-Route::get('/searchBus', [SearchBus::class, "index"])->name('user.searchBus');
+Route::get('/searchBus', [SearchBus::class, "search"])->name('user.searchBus');
 
+// for home search
 Route::get('/bus', [HomeController::class, "search"])->name('user.busSearch');
 
 
 //admin
 //for bus
 Route::get('/admin/add-bus',[BusController::class,'addBus'])->name('admin.addBus');
-Route::post('/create-bus',[BusController::class,'createBus'])->name('admin.createBus');
+Route::post('admin/create-bus',[BusController::class,'createBus'])->name('admin.createBus');
 Route::get('/admin/getBus',[BusController::class,'getBus'])->name('admin.getBus');
 Route::get('/admin/bus',[BusController::class,'getBusById'])->name('admin.getBusById');
 Route::get('/admin/deleteBus/{bus_id}',[BusController::class,'deleteBus'])->name('admin.deleteBus');
@@ -78,15 +80,6 @@ Route::get('/admin/route/{route_id}',[RouteController::class,'getRouteById'])->n
 Route::get('/admin/editRoute/{route_id}',[RouteController::class,'editRoute'])->name('admin.editRoute');
 Route::post('/admin/updateRoute',[RouteController::class,'updateRoute'])->name('admin.updateRoute');
 Route::get('/admin/deleteRoute/{route_id}',[RouteController::class,'deleteRoute'])->name('admin.deleteRoute');
-
-//for seat
-Route::get('/admin/add-seat',[SeatController::class,'addSeat'])->name('admin.addSeat');
-Route::post('/admin/create-seat',[SeatController::class,'createSeat'])->name('admin.createSeat');
-Route::get('/admin/getSeat',[SeatController::class,'getSeat'])->name('admin.getSeat');
-Route::get('/admin/seat',[SeatController::class,'getSeatById'])->name('admin.getSeatById');
-Route::get('/admin/editSeat/{seat_id}',[SeatController::class,'editSeat'])->name('admin.editSeat');
-Route::post('/admin/updateSeat',[SeatController::class,'updateSeat'])->name('admin.updateSeat');
-Route::get('/admin/deleteSeat/{seat_id}',[SeatController::class,'deleteSeat'])->name('admin.deleteSeat');
 
 //middleware route for authentication
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

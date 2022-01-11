@@ -12,4 +12,8 @@ class Operator extends Model
     protected $table = "operators";
 
     protected $primaryKey = 'operator_id';
+
+    protected $fillable = [
+        'operator_name',
+    ];
 }

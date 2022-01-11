@@ -28,7 +28,7 @@ class BusController extends Controller
             'bus_name' => 'required|unique:buses',
             'facilities' => 'required',
             'time' => 'required',
-            'price' => 'required'
+            'bus_number' => 'required|unique:buses'
         ]);
         $buses = new bus();
         $buses->bus_name = $request->bus_name;
@@ -39,6 +39,7 @@ class BusController extends Controller
         $buses->bus_number = $request->bus_number;
         $buses->route_id = $request->route_id;
         $buses->operator_id = $request->operator_id;
+        $buses->seat = $request->seat;
         
         $img = $request->file;
         $imageName=time().'.'.$img->getClientoriginalExtension();
@@ -71,17 +72,12 @@ class BusController extends Controller
 
     //function for updating bus
     public function updateBus(Request $request) {
-        // $request->validate([
-        //     'bus_name' => 'required',
-        //     'facilities' => 'required',
-        //     'time' => 'required',
-        //     'price' => 'required',
-        //     'driver_name' => 'required',
-        //     'bus_number' => 'required',
-        //     'route_id' => 'required',
-        //     'operator_id' => 'required',
-        //     'img' => 'required'
-        // ]);
+        $validated = $request->validate([
+            'bus_name' => 'required',
+            'facilities' => 'required',
+            'time' => 'required',
+            'bus_number' => 'required   '
+        ]);
         $bus = bus::find($request->bus_id);
         $bus->bus_name = $request->bus_name;
         $bus->facilities = $request->facilities;
@@ -93,7 +89,7 @@ class BusController extends Controller
         // $buses->operator_id = $request->operators->operator_id;
         $bus->route_id = $request->route_id;
         $bus->operator_id = $request->operator_id;
-
+        $bus->seat = $request->seat;
         $img = $request->file;
         if ($img) {
             $imageName=time().'.'.$img->getClientoriginalExtension();

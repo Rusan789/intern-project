@@ -93,6 +93,18 @@
                 @enderror
 
                 <div class="mb-3">
+                    <label for="seat" class="form-label">Seat</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="seat"
+                    name="seat"
+                    value="{{ $bus->seat }}"
+                    placeholder="Seat"
+                    />
+                </div>                
+
+                <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
                     <input
                     type="text"

@@ -51,19 +51,23 @@
                     <div class="first col-lg-5 col-md-6 mb-5">
                         <div class="price-operator">
                             <div class="price">
-                                <label for="customRange2" class="form-label fw-bold">Price Range (0 - 2000)</label>
-                                <input type="range" class="form-range" min="0" max="2000" id="customRange2" />
+                                <label for="customRange2" class="form-label fw-bold">Price Range (0 - 1500)</label>
+                                <input type="range" class="form-range" id="slider" min="0" max="2000" id="customRange2" />
                             </div>
+                            
 
                             <div class="operator">
                                 <label for="operator" class="form-label fw-bold">Bus Operator</label>
                                 <select class="form-select" aria-label="Default select example">
-                                    <option selected>----- Select Bus Operator -----</option>
-                                    <option value="ridhisiddhi yatayat">
+                                    <option selected>----- Filter Bus Details -----</option>
+                                    {{-- <option value="High to Low">
                                         Ridhisiddhi Yatayat
                                     </option>
                                     <option value="fpy">Fast Pokhara Yatayat</option>
-                                    <option value="c-p">Chitwan To Pokhara Yatayat</option>
+                                    <option value="c-p">Chitwan To Pokhara Yatayat</option> --}}
+                                    @foreach ($buses as $bus)
+                                        <option value="{{ $bus->bus_id }}">{{ $bus->price }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -92,8 +96,8 @@
 
                                                 <div class="flex-price col-lg-3">
                                                     <h4>Price</h4>
-                                                    <h5 class="mb-3">{{ $bus->price }}</h5>
-                                                    <button type="button" class="btn btn-primary mb-3"><a class="btnBus" href="{{ route("user.busDetails") }}">Select &rarr;</a></button>
+                                                    <h5 class="mb-3">Rs. {{ $bus->price }}</h5>
+                                                    <button type="button" class="btn btn-primary mb-3"><a class="btnBus" href="{{ route('user.busDetails',['bus_id'=>$bus->bus_id]) }}">Select &rarr;</a></button>
                                                 </div>
                                             </div>
                                         </div>                                
@@ -103,7 +107,7 @@
                                         <br>
                                         <i class="fas fa-clock fs-5 pb-2">&nbsp; &nbsp;<span class="location-span">{{ $bus->time }}</span></i>
                                         <br>
-                                        <i class="fas fa-chair-office fs-5">&nbsp; &nbsp;<span class="location-span">20 Available Seats</span></i>
+                                        <i class="fas fa-chair-office fs-5">&nbsp; &nbsp;<span class="location-span">{{ $bus->seat }} Total Seats</span></i>
                                     </div>
                                 </div>
                             @endforeach
@@ -120,3 +124,27 @@
         </div>
     </div>
 @endsection
+
+{{-- @push('scripts')
+    <script>
+        var slider = document.getElementById('slider');
+        noUiSlider.create(slider,{
+            start : [1, 1500],
+            connect:true,
+            range :{
+                'min' : 1,
+                'max' : 1500
+            },
+            pips:{
+                mode:'steps',
+                stepped:true,
+                density:4
+            }
+        });
+
+        slider.noUiSlider.on('update', function(value){
+            @this.set('min_price',value[0]);
+            @this.set('max_price',value[1]);
+        });
+    </script>
+@endpush --}}

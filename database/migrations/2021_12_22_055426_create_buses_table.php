@@ -20,6 +20,7 @@ class CreateBusesTable extends Migration
             $table->string('time');
             $table->string('price');
             $table->string('img');
+            $table->string('seat');
             $table->string('driver_name');
             $table->string('bus_number');
             $table->unsignedBigInteger('route_id');

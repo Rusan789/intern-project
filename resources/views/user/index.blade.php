@@ -72,6 +72,13 @@
                         <a href="{{ route('user.busSearch') }}">Search Bus &rarr;</a>
                       </button>
                   </div>
+
+                  {{-- <div class="d-flex justify-content-center">
+                    <button class="btn btn-primary bus-btn p-2">
+                        Search Bus &rarr;
+                    </button>
+                </div> --}}
+                    
               </div>
           </form>
       </div>
@@ -119,19 +126,19 @@
         <div class="row g-3 pb-5">
           <div class="col-lg mt-3 stat-text">
             <div class="name text-center fs-1">Routes</div>
-            <div class="number text-center fs-2">30+</div>
+            <div class="number text-center fs-2">{{ $route }}</div>
             <div class="description text-center fs-5">Routes Available</div>
           </div>
 
           <div class="col-lg mt-3 stat-text">
             <div class="name text-center fs-1">Buses</div>
-            <div class="number text-center fs-2">50+</div>
+            <div class="number text-center fs-2">{{ $buses }}</div>
             <div class="description text-center fs-5">Bus Available</div>
           </div>
 
           <div class="col-lg mt-3 stat-text">
             <div class="name text-center fs-1">Customers</div>
-            <div class="number text-center fs-2">1000+</div>
+            <div class="number text-center fs-2">{{ $users }}</div>
             <div class="description text-center fs-5">
               Happy Customers Using Our System
             </div>
